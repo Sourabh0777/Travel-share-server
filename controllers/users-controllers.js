@@ -12,7 +12,6 @@ const getUsers = async (req, res, next) => {
   } catch (error) {
     return next(new HttpError("Fetching user failed please try again", 422));
   }
-  console.log("🚀 ~ file: users-controllers.js:10 ~ getUsers ~ AllUser:", AllUser)
 
   res.json({ users: AllUser.map((user) => user.toObject({ getters: true })) });
 };
