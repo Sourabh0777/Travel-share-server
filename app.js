@@ -50,7 +50,7 @@ mongoose
     `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.btpmqbi.mongodb.net/${process.env.DB_NAME}`
   )
   .then(() => {
-    app.listen(5001);
+    app.listen(process.env.PORT || 5001);
   })
   .catch((error) => {
     console.log("🚀 ~ file: app.js:32 ~ mongoose.connect ~ error:", error);
